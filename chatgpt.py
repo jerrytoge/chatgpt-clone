@@ -12,7 +12,7 @@ def openai_create(prompt):
     model="text-davinci-003",
     prompt=prompt,
     temperature=0.9,
-    max_tokens=150,
+    max_tokens=1500,
     top_p=1,
     frequency_penalty=0,
     presence_penalty=0.6,
@@ -30,7 +30,7 @@ def chatgpt_clone(input, history):
     inp = ' '.join(s)
     output = openai_create(inp)
     history.append((input, output))
-    return history, history
+    return output, history
 
 # Streamlit App
 st.set_page_config(
